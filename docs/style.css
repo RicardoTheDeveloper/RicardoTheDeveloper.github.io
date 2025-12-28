@@ -446,34 +446,45 @@ footer {
     /* Hide controls from top bar on mobile */
     .controls {
         display: none;
-        transition: all 0.3s ease;
     }
 
     /* Show controls inside the mobile menu when nav is active */
     nav.active .controls {
         display: flex;
         position: fixed;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 65%;
+        left: 0;
+        width: 100%;
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
         z-index: 1000;
-        width: 80%;
+        padding: 0 10%;
     }
 
     nav.active .controls select,
     nav.active .controls .btn {
         width: 100%;
-        max-width: 250px;
+        max-width: 280px;
+        height: 50px;
         text-align: center;
-        padding: 0.8rem;
+        padding: 0 1rem;
+        font-size: 1rem;
+        background: var(--bg-secondary);
+        /* Solid background for visibility */
+        border: 1px solid var(--accent-primary);
+        color: var(--text-primary);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /* Ensure CV button is visible in mobile menu */
     nav.active .btn-primary {
-        display: block !important;
+        display: flex !important;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        color: white;
     }
 
     .hero h1 {
@@ -497,7 +508,7 @@ footer {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding-top: 8rem;
+        padding-top: 6rem;
         transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         display: flex;
         z-index: 999;
@@ -508,7 +519,7 @@ footer {
     }
 
     .nav-links li {
-        padding: 1rem 0;
+        padding: 0.8rem 0;
     }
 
     .nav-links a {

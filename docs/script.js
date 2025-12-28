@@ -88,15 +88,10 @@ const translations = {
         footer_rights: "Criado com paixão por Ricardo Simões."
     }
 }; document.addEventListener('DOMContentLoaded', () => {
-    const userLang = navigator.language;
-    const lang = userLang.split('-')[0];
     const langSelect = document.getElementById('langSelect');
 
-    if ([...langSelect.options].some(option => option.value === userLang)) {
-        langSelect.value = userLang;
-    } else if ([...langSelect.options].some(option => option.value === lang)) {
-        langSelect.value = lang;
-    }
+    // Always default to English as per user request
+    langSelect.value = 'en';
 
     changeLanguage();
 });
