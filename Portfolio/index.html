@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Simões - Full-Stack Software Engineer</title>
+    <link rel="icon" type="image/png"
+        href="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="dark">
+    <div class="circuit-bg"></div>
+    <div class="scanlines"></div>
+
+    <nav>
+        <div class="logo">RS</div>
+        <button class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+        <div class="controls">
+            <select id="langSelect" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="nl">Nederlands</option>
+                <option value="pt-PT">Português</option>
+            </select>
+            <button class="btn" onclick="toggleTheme()">🌓</button>
+            <button class="btn btn-primary" onclick="downloadCV()" data-i18n="download_cv">Download CV</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>RICARDO SIMÕES</h1>
+            <p class="subtitle" data-i18n="hero_subtitle">FULL-STACK SOFTWARE ENGINEER</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Architecture</span>
+                <span class="tech-tag">PostgreSQL</span>
+            </div>
+        </section>
+
+        <section id="about" class="hidden">
+            <h2 class="section-title" data-i18n="about_title">About Me</h2>
+            <div class="glass-card">
+                <p class="about-content" data-i18n="about_text">
+                    Passionate Full-Stack Software Engineer specializing in Java, SQL, JavaScript, and React.
+                    I build scalable backend systems and responsive, user-focused frontends, with a strong emphasis
+                    on clean code and thoughtful design. Always learning, always improving, and motivated to create
+                    software that has real-world impact.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="hidden">
+            <h2 class="section-title" data-i18n="projects_title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 data-i18n="project1_title">E-Commerce Platform</h3>
+                    <p data-i18n="project1_desc">Full-stack application with Spring Boot backend and React frontend.
+                        Features include user authentication, product management, and payment integration.</p>
+                    <div class="tech-stack" style="justify-content: flex-start; margin-top: 1rem;">
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">Java</span>
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">React</span>
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 data-i18n="project2_title">Task Management System</h3>
+                    <p data-i18n="project2_desc">Collaborative platform for team project management with real-time
+                        updates, task assignments, and progress tracking.</p>
+                    <div class="tech-stack" style="justify-content: flex-start; margin-top: 1rem;">
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">Spring Boot</span>
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">WebSocket</span>
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">React</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 data-i18n="project3_title">RESTful API Service</h3>
+                    <p data-i18n="project3_desc">Scalable microservices architecture with comprehensive API
+                        documentation, JWT authentication, and cloud deployment.</p>
+                    <div class="tech-stack" style="justify-content: flex-start; margin-top: 1rem;">
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">Java</span>
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">Spring</span>
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">Docker</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 data-i18n="project4_title">Data Analytics Dashboard</h3>
+                    <p data-i18n="project4_desc">Interactive visualization platform for business intelligence with
+                        real-time data processing and customizable charts.</p>
+                    <div class="tech-stack" style="justify-content: flex-start; margin-top: 1rem;">
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">React</span>
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">D3.js</span>
+                        <span class="tech-tag" style="font-size: 0.8rem; padding: 0.3rem 1rem;">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="hidden">
+            <h2 class="section-title" data-i18n="contact_title">Contact Me</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3 data-i18n="contact_email">Email</h3>
+                    <a href="mailto:rafelricardo403@gmail.com">rafelricardo403@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3 data-i18n="contact_phone">Phone</h3>
+                    <a href="tel:+351936913787">+351 936 913 787</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/ricardo-simões-fullstacksoftwareengineer"
+                        target="_blank">Ricardo Simões</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/RicardoTheDeveloper" target="_blank">RicardoTheDeveloper</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ricardo Simões. <span data-i18n="footer_rights">All rights reserved.</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
