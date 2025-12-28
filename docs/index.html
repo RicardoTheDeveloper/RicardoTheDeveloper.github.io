@@ -20,26 +20,31 @@
     <div class="scanlines"></div>
 
     <nav>
-        <div class="logo">RS</div>
-        <button class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="#about" data-i18n="nav_about">About</a></li>
-            <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
-            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-        </ul>
-        <div class="controls">
-            <select id="langSelect" onchange="changeLanguage()">
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-                <option value="nl">Nederlands</option>
-                <option value="pt-PT">Português</option>
-            </select>
-            <button class="btn" onclick="toggleTheme()">🌓</button>
-            <button class="btn btn-primary" onclick="downloadCV()" data-i18n="download_cv">Download CV</button>
+        <div class="nav-container">
+            <div class="logo">RS</div>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#about" data-i18n="nav_about">My Story</a></li>
+                    <li><a href="#projects" data-i18n="nav_projects">Crafted Work</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Let's Connect</a></li>
+                </ul>
+
+                <div class="controls">
+                    <select id="langSelect" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="pt">Português</option>
+                    </select>
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌓</button>
+                    <a href="resume.pdf" class="btn btn-primary" data-i18n="get_resume">Get Resume</a>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
