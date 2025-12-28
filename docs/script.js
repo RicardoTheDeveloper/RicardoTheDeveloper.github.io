@@ -87,24 +87,24 @@ const translations = {
         contact_phone: "Telefone",
         footer_rights: "Criado com paixão por Ricardo Simões."
     }
-};document.addEventListener('DOMContentLoaded', () => {
+}; document.addEventListener('DOMContentLoaded', () => {
     const userLang = navigator.language;
     const lang = userLang.split('-')[0];
     const langSelect = document.getElementById('langSelect');
-    
+
     if ([...langSelect.options].some(option => option.value === userLang)) {
         langSelect.value = userLang;
     } else if ([...langSelect.options].some(option => option.value === lang)) {
         langSelect.value = lang;
     }
-    
+
     changeLanguage();
 });
 
 function changeLanguage() {
     const lang = document.getElementById('langSelect').value;
     const elements = document.querySelectorAll('[data-i18n]');
-    
+
     elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -142,16 +142,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+const nav = document.querySelector("nav");
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
 hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
     hamburger.classList.toggle("active");
     navLinks.classList.toggle("active");
 });
 
 document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
+        nav.classList.remove("active");
         hamburger.classList.remove("active");
         navLinks.classList.remove("active");
     });
