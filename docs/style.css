@@ -129,8 +129,11 @@ body::before {
 nav {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 90%;
-    margin: 1.5rem 5%;
+    max-width: 1200px;
+    margin: 1.5rem auto;
     padding: 1rem 2rem;
     background: var(--glass-bg);
     backdrop-filter: blur(15px);
@@ -142,7 +145,7 @@ nav {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -249,6 +252,10 @@ select {
     z-index: 1001;
 }
 
+.logo {
+    display: none !important;
+}
+
 .hamburger .bar {
     display: block;
     width: 25px;
@@ -259,27 +266,63 @@ select {
 }
 
 @media (max-width: 768px) {
+    nav {
+        width: 94%;
+        margin-top: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
     .hamburger {
         display: block;
+    }
+
+    /* Backdrop overlay for modal effect */
+    .nav-links::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(15, 10, 29, 0.95), rgba(26, 20, 46, 0.98));
+        backdrop-filter: blur(10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: -1;
+    }
+
+    .nav-links.active::before {
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: 100%;
+        left: 0;
+        right: 0;
+        width: 100vw;
         height: 100vh;
-        background: var(--bg-primary);
+        background: transparent;
         flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 8rem;
-        transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.95);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
         overflow-y: auto;
+        pointer-events: none;
     }
 
     .nav-links.active {
-        right: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        pointer-events: auto;
     }
 
     .nav-links ul {
@@ -288,26 +331,94 @@ select {
         width: 100%;
         gap: 2rem;
         margin-bottom: 3rem;
+        padding: 0;
+    }
+
+    .nav-links ul li {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: none;
+    }
+
+    .nav-links.active ul li {
+        animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .nav-links.active ul li:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .nav-links.active ul li:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+
+    .nav-links.active ul li:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .nav-links a {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s;
+        position: relative;
+    }
+
+    .nav-links a::after {
+        background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        height: 3px;
     }
 
     .controls {
         flex-direction: column;
         width: 100%;
-        padding: 0 10% 4rem;
-        gap: 1.5rem;
+        max-width: 320px;
+        gap: 1rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: none;
+    }
+
+    .nav-links.active .controls {
+        animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.25s forwards;
     }
 
     .controls select,
     .controls .theme-toggle,
     .controls .btn {
         width: 100%;
-        max-width: 280px;
-        height: 50px;
+        height: 52px;
         font-size: 1.1rem;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Fix for "Get Resume" button text visibility */
+    .controls .btn-primary {
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+        -webkit-text-fill-color: white !important;
+        -webkit-background-clip: border-box !important;
+        background-clip: border-box !important;
+        color: white !important;
+    }
+
+    .controls select:hover,
+    .controls .theme-toggle:hover,
+    .controls .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(77, 159, 255, 0.4);
     }
 
     /* Hamburger Animation */
@@ -321,6 +432,21 @@ select {
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    section {
+        padding: 4rem 6%;
+    }
+
+    .projects-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-card,
+    .contact-item {
+        padding: 1.5rem;
     }
 }
 
@@ -475,6 +601,7 @@ section {
     gap: 2rem;
     max-width: 1000px;
     margin: 2rem auto;
+    width: 100%;
 }
 
 .contact-item {

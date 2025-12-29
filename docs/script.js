@@ -65,7 +65,7 @@ const translations = {
         contact_phone: "Telefoon",
         footer_rights: "Alle rechten voorbehouden."
     },
-    "pt-PT": {
+    pt: {
         nav_about: "A Minha História",
         nav_projects: "Trabalhos",
         nav_contact: "Contacto",

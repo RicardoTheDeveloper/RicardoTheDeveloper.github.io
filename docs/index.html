@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body data-theme="dark">
@@ -21,8 +21,6 @@
 
     <nav>
         <div class="nav-container">
-            <div class="logo">RS</div>
-
             <div class="nav-links">
                 <ul>
                     <li><a href="#about" data-i18n="nav_about">My Story</a></li>
@@ -34,6 +32,8 @@
                     <select id="langSelect" onchange="changeLanguage()">
                         <option value="en">English</option>
                         <option value="pt">Português</option>
+                        <option value="fr">Français</option>
+                        <option value="nl">Nederlands</option>
                     </select>
                     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌓</button>
                     <a href="resume.pdf" class="btn btn-primary" data-i18n="get_resume">Get Resume</a>
