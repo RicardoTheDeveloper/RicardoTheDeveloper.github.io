@@ -16,7 +16,7 @@ const translations = {
         project3_desc: "High-performance database system for harmonic stream processing using Python, Flask, and PostgreSQL.",
         project4_title: "Googol Search Engine (SD)",
         project4_desc: "Distributed search engine with RMI backend, Spring Boot Web UI, real-time WebSocket monitoring, and OpenAI integration.",
-        contact_title: "Let's Talk Shop",
+        contact_title: "Let's Talk",
         contact_email: "Reach out via Email",
         contact_phone: "Give me a Call",
         footer_rights: "Hand-crafted with passion by Ricardo Simões."
