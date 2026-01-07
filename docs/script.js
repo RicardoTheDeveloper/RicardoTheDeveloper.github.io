@@ -3,7 +3,8 @@ const translations = {
         nav_about: "My Story",
         nav_projects: "Crafted Work",
         nav_contact: "Let's Connect",
-        download_cv: "Get Resume",
+        get_resume: "Get Resume",
+        theme_label: "Theme",
         hero_subtitle: "FULL-STACK SOFTWARE ENGINEER & SYSTEM ARCHITECT",
         about_title: "The Person Behind the Code",
         about_text: "I'm Ricardo, a Full-Stack Engineer who believes that great software is built at the intersection of robust logic and human intuition. Specializing in Java, Spring Boot, and React, I don't just write code; I design systems. Whether it's crafting a pixel-perfect frontend or architecting a scalable backend, I'm driven by the challenge of solving complex problems with elegant, human-centric solutions. My passion lies in understanding how every component fits into the bigger picture of system architecture.",
@@ -25,7 +26,8 @@ const translations = {
         nav_about: "Mon Histoire",
         nav_projects: "Réalisations",
         nav_contact: "Contact",
-        download_cv: "Télécharger CV",
+        get_resume: "Télécharger CV",
+        theme_label: "Thème",
         hero_subtitle: "INGÉNIEUR FULL-STACK & ARCHITECTE SYSTÈME",
         about_title: "La Personne Derrière le Code",
         about_text: "Je suis Ricardo, un ingénieur Full-Stack convaincu que les meilleurs logiciels naissent de l'alliance entre une logique robuste et l'intuition humaine. Spécialisé en Java, Spring Boot et React, je ne me contente pas d'écrire du code ; je conçois des systèmes. Qu'il s'agisse de créer un frontend au pixel près ou d'architecturer un backend évolutif, je suis motivé par le défi de résoudre des problèmes complexes avec des solutions élégantes et centrées sur l'humain.",
@@ -47,7 +49,8 @@ const translations = {
         nav_about: "Over",
         nav_projects: "Projecten",
         nav_contact: "Contact",
-        download_cv: "Download CV",
+        get_resume: "Download CV",
+        theme_label: "Thema",
         hero_subtitle: "FULL-STACK SOFTWARE ENGINEER",
         about_title: "Over Mij",
         about_text: "Gepassioneerde Full-Stack Software Engineer gespecialiseerd in Java, SQL, JavaScript en React. Ik bouw schaalbare backend-systemen en responsieve, gebruikersgerichte frontends, met een sterke nadruk op schone code en doordacht ontwerp. Altijd leren, altijd verbeteren, en gemotiveerd om software te creëren die echte impact heeft.",
@@ -69,7 +72,8 @@ const translations = {
         nav_about: "A Minha História",
         nav_projects: "Trabalhos",
         nav_contact: "Contacto",
-        download_cv: "Descarregar CV",
+        get_resume: "Descarregar CV",
+        theme_label: "Tema",
         hero_subtitle: "ENGENHEIRO DE SOFTWARE FULL-STACK & ARQUITETO DE SISTEMAS",
         about_title: "A Pessoa por Detrás do Código",
         about_text: "Sou o Ricardo, um Engenheiro Full-Stack que acredita que software de excelência nasce no cruzamento entre lógica robusta e intuição humana. Especializado em Java, Spring Boot e React, não apenas escrevo código; desenho sistemas. Seja a criar uma frontend perfeita ao pixel ou a arquitetar uma backend escalável, sou motivado pelo desafio de resolver problemas complexos com soluções elegantes e centradas no humano.",
@@ -117,8 +121,8 @@ function toggleTheme() {
 
 function downloadCV() {
     const link = document.createElement('a');
-    link.href = 'Ricardo_Simoes_CV.pdf';
-    link.download = 'Ricardo_Simoes_CV.pdf';
+    link.href = 'RicardoSimoes_CV_Current.pdf';
+    link.download = 'RicardoSimoes_CV_Current.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
