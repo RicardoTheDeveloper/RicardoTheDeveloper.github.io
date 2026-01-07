@@ -602,6 +602,13 @@ section {
     margin-bottom: 1rem;
 }
 
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
 .project-card p {
     color: var(--text-secondary);
     line-height: 1.6;
